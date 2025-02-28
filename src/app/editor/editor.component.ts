@@ -61,7 +61,7 @@ interface FilePickerOptions {
 
       <textarea
         #editorTextarea
-        [ngModel]="state().content"
+        [ngModel]="getContent()"
         (ngModelChange)="updateContent($event)"
         (contextmenu)="onContextMenu($event)"
         placeholder="Escribe aquí tu texto o haz clic derecho para ver las opciones"
@@ -71,9 +71,9 @@ interface FilePickerOptions {
 
       <div #contextMenu 
            class="context-menu" 
-           [class.visible]="state().showContextMenu"
-           [style.left.px]="state().contextMenuPosition.x" 
-           [style.top.px]="state().contextMenuPosition.y">
+           [class.visible]="getShowContextMenu()"
+           [style.left.px]="getContextMenuPosition().x" 
+           [style.top.px]="getContextMenuPosition().y">
         <div class="menu-item" (click)="copy()">
           <svg viewBox="0 0 24 24" width="16" height="16">
             <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
@@ -358,15 +358,18 @@ export class EditorComponent {
   @ViewChild('editorTextarea') editorTextarea!: ElementRef<HTMLTextAreaElement>;
   @ViewChild('contextMenu') contextMenu!: ElementRef;
 
-  // Estado del editor
-  protected state = signal<EditorState>({
+  public state = signal<EditorState>({
     content: '',
     currentFilePath: null,
     showContextMenu: false,
     contextMenuPosition: { x: 0, y: 0 }
   });
 
-  // Valores computados
+  // Getters públicos para el template
+  public getContent = computed(() => this.state().content);
+  public getShowContextMenu = computed(() => this.state().showContextMenu);
+  public getContextMenuPosition = computed(() => this.state().contextMenuPosition);
+
   characterCount = computed(() => this.state().content.length);
   lineCount = computed(() => this.state().content.split('\n').length);
   wordCount = computed(() => {
