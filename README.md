@@ -1,59 +1,57 @@
-# EditorAngular
+# Editor de Texto en Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+Un editor de texto moderno y elegante construido con Angular 19, utilizando las últimas características como Signals para el manejo del estado.
 
-## Development server
+## Características
 
-To start a local development server, run:
+- 🎨 Interfaz moderna con tema oscuro
+- 📝 Edición de texto con fuente monoespaciada
+- 💾 Guardar y abrir archivos
+- 📊 Estadísticas en tiempo real (caracteres, líneas, palabras)
+- 🖱️ Menú contextual con animaciones
+- ⌨️ Atajos de teclado
+  - Ctrl + N: Nuevo archivo
+  - Ctrl + O: Abrir archivo
+  - Ctrl + S: Guardar archivo
 
-```bash
-ng serve
-```
+## Tecnologías Utilizadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 19
+- TypeScript
+- Signals para manejo de estado
+- File System Access API
+- CSS Moderno (Flexbox, Grid, Variables)
 
-## Code scaffolding
+## Instalación
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/TU_USUARIO/editor-angular.git
+   ```
 
-```bash
-ng generate component component-name
-```
+2. Instala las dependencias:
+   ```bash
+   cd editor-angular
+   npm install
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. Inicia el servidor de desarrollo:
+   ```bash
+   ng serve
+   ```
 
-```bash
-ng generate --help
-```
+4. Abre tu navegador en `http://localhost:4200`
 
-## Building
+## Estructura del Proyecto
 
-To build the project run:
+- `src/app/editor/editor.component.ts`: Componente principal del editor
+- `src/styles.css`: Estilos globales
+- `src/app/app.component.ts`: Componente raíz de la aplicación
 
-```bash
-ng build
-```
+## Contribuir
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir los cambios que te gustaría hacer.
 
-## Running unit tests
+## Licencia
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT

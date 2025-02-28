@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { EditorComponent } from './editor/editor.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [EditorComponent],
+  template: `<app-editor></app-editor>`,
+  styles: [`
+    :host {
+      display: block;
+      height: 100vh;
+      width: 100vw;
+    }
+  `]
 })
-export class AppComponent {
-  title = 'editor-angular';
-}
+export class AppComponent {}
