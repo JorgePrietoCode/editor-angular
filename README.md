@@ -26,7 +26,7 @@ Un editor de texto moderno y elegante construido con Angular 19, utilizando las 
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/TU_USUARIO/editor-angular.git
+   git clone https://github.com/JorgePrietoCode/editor-angular.git
    ```
 
 2. Instala las dependencias:
